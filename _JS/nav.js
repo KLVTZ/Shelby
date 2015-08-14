@@ -4,7 +4,7 @@
 /*     =Additional lemmonSlider.js && gmap3.js 
 /* ============================================ */
 
-(function() {
+(function($) {
 	
 	var wrap = $('div.wrap');
 	var main = $('div.grid-container');
@@ -19,9 +19,9 @@
 		});
 
 	$('div.buttons').on('click','a', function(e) {
+		e.preventDefault();
 		var sButton = $(this).prev().prev();
 		var href = $(this).attr('href');
-
 
 		if(main.height() == mHeight) {
 			wrap.animate({height: '220px', opacity: 1.0},300,false);
@@ -91,6 +91,5 @@
 		}
 
 		fButton = sButton;
-		e.preventDefault();
 	});
-})();
+}(jQuery));
